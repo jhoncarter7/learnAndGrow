@@ -17,6 +17,12 @@ const userSchema = new Schema({
         lowerCase: true,
       //   match:  [/^[a-zA-Z0-9]+$/, 'is invalid'],
      },
+     email:{
+      type: String,
+      unique: true,
+      lowerCase: true,
+      require: true
+     },
      password:{
         type: String,
         require: true,
@@ -39,6 +45,12 @@ const adminSchema = new Schema({
       lowerCase: true,
     //   match:  [/^[a-zA-Z0-9]+$/, 'is invalid'],
    },
+   email:{
+      type: String,
+      unique: true,
+      lowerCase: true,
+      require: true,
+   },
    password:{
       type: String,
       require: true,
@@ -59,13 +71,13 @@ const purchaseSchema = new Schema({
    courseId: Schema.Types.ObjectId,
    userId: Schema.Types.ObjectId
 })
- const UserModel = mongoose.model("User", userSchema);
+ const userModel = mongoose.model("user", userSchema);
  const adminModel = mongoose.model("admin", adminSchema);
  const courseModel = mongoose.model("course", courseSchema);
  const purchaseModel = mongoose.model("purchase", purchaseSchema);
 
-module.export ={
-   UserModel,
+module.exports ={
+   userModel,
    adminModel,
    courseModel,
    purchaseModel

@@ -2,12 +2,12 @@ const {Router}  = require("express");
 
 const courseRoute = Router();
 
-courseRoute.get('/purchased', (req, res) => {
+courseRoute.post('/purchase', (req, res) => {
     res.send("list of ur purchased course")
 })
 
 
-courseRoute.get('/allCourse', (req, res)=> {
+courseRoute.get('/preview', (req, res)=> {
     res.send("list of all course");
 })
 
